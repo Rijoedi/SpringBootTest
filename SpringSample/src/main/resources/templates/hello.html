@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Spring Bootではタイムリーフを使うことを推奨されているため
+	htmlタグに タイムリーフのネームスペースを定義している-->
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8"></meta>
@@ -8,14 +10,19 @@
 	<body>
 		<h1>Hello World</h1>
 		
+		<!-- 「/hello」へ、POSTメソッドで以下のデータを送信する -->
+		<!-- ここは「氏名」だけ入力してもらって次ページで反映して終わりのページ -->
 		<form method="post" action="/hello">
+			<!-- th:value属性を使うと、UIからControllerクラスに値を渡せる -->
 			氏名：<input type="text" name="text1" th:value="${text_value}" />
 			<input type="submit" value="クリック" />
 		</form>
 		
 		<br />
 		
+		<!-- 「/hello/db」へPOSTメソッドで以下のデータを送信する -->
 		<form method="post" action="/hello/db">
+			<!-- th:value属性を使って、「text2」としてControllerクラスに値を渡す -->
 			従業員IDを入力：<input type="text" name = "text2" th:value="${text2_value}" />
 			<input type="submit" value="クリック" />
 		</form>

@@ -3,6 +3,8 @@ package com.example.demo.trySpring;
 
 import lombok.Data;
 
+//lombok.Dataを使うとgetter&setterが自動生成されるはずがされない。
+//HelloRepositoryでDBから検索されたデータ「id,name,age」を、各フィールドに入れる。
 @Data
 public class Employee {
 	
@@ -10,6 +12,7 @@ public class Employee {
 	private String employeeName;
 	private int age;
 	
+	/* GET && SET */
 	
 	public int getEmployeeId() {
 		return employeeId;
